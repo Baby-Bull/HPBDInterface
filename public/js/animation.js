@@ -1,6 +1,17 @@
 //jshint esversion:6
 
 /******************************************************* SETUP ************************************************************/
+function update(e) {
+    var x = e.clientX || e.touches[0].clientX
+    var y = e.clientY || e.touches[0].clientY
+
+    document.getElementById("darkroom").style.setProperty('--cursorX', x + 'px')
+    document.getElementById("darkroom").style.setProperty('--cursorY', y + 'px')
+}
+
+document.addEventListener('mousemove', update)
+document.addEventListener('touchmove', update)
+
 
 const tempIndex = 1;
 
